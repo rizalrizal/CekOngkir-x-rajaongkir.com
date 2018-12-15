@@ -12,7 +12,7 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS => "origin=".$_POST['city']."&destination=".$_POST['city2']."&weight=".$_POST['berat']."&courier=jne",
   CURLOPT_HTTPHEADER => array(
     "content-type: application/x-www-form-urlencoded",
-   "key: 37068c4174315a0b794bf6ba9d55e1f2"
+   "key: api-key"
   ),
 ));
 
