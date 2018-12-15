@@ -1,0 +1,33 @@
+<?php
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(
+    "key: 37068c4174315a0b794bf6ba9d55e1f2"
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "<option value='0'>cURL Error : . $err;</option>";
+} else {
+  $response_decode = json_decode($response,true);
+  foreach ($response_decode['rajaongkir']['results'] as $value) {
+    echo "<option value='$value[province_id]'>$value[province]</option>";
+}
+ 
+  
+}
+
+?>
