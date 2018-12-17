@@ -9,7 +9,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "origin=".$_POST['city']."&destination=".$_POST['city2']."&weight=".$_POST['berat']."&courier=jne",
+  CURLOPT_POSTFIELDS => "origin=".$_POST['city']."&destination=".$_POST['city2']."&weight=".$_POST['berat']."000&courier=jne",
   CURLOPT_HTTPHEADER => array(
     "content-type: application/x-www-form-urlencoded",
    "key: api-key"
@@ -28,7 +28,7 @@ if ($err) {
 
   $dari = $response_decode['rajaongkir']['origin_details']['province']." (".$response_decode['rajaongkir']['origin_details']['city_name'].")";
   $ke = $response_decode['rajaongkir']['destination_details']['province']." (".$response_decode['rajaongkir']['destination_details']['city_name'].")";
-  $berat = $response_decode['rajaongkir']['query']['weight'];
+  $berat = $_POST['berat'];
 
   echo "<h1>Ongkir JNE : $dari ke $ke  Dengan Berat $berat Kg</h1>";
   echo "<ol>";
