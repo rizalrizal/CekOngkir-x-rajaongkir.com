@@ -1,5 +1,5 @@
 # CekOngkir-x-rajaongkir.com
-Cek Ongkir menggunakan API rajaongkir dengan PHP&amp; AJAX :+1:
+Cek Ongkir menggunakan API rajaongkir dengan PHP&amp; JQUERY AJAX :+1:
 
 Note : Ganti api-key di di file getCity.php, getProvinsi.php dan getOngkir.php , Untuk Mendapatkan API KEY daftar di  [rajaongkir](https://rajaongkir.com/akun/daftar)
 
